@@ -10,12 +10,13 @@ namespace Models
     {
         public static readonly string Insert = "INSERT INTO ServiceCar (Car, Service, Status) VALUES (@CarPlate, @ServiceId, @Status)";
         public static readonly string Update = "UPDATE ServiceCar SET Status = 1 WHERE Id = @Id";
-        public static readonly string GetAllNotDone = "SELECT Id, Car, Service FROM ServiceCar WHERE Status = 0";
+        public static readonly string GetAllNotDone = "SELECT SC.Id, SC.Car, sc.Service FROM ServiceCar as SC INNER JOIN Car as c ON (sc.Car = c.Plate) INNER JOIN [Service] AS s ON (sc.Service = s.Id) WHERE Status = 0";
 
+        
         public int Id { get; set; }    
-        public string CarPlate { get; set; }
+        public string Car { get; set; }
 
-        public int ServiceId { get; set; }
+        public int Service { get; set; }
 
         public int Status { get; set; }    
 
@@ -28,11 +29,11 @@ namespace Models
         {
             if (Status == 0)
             {
-                return "Id: " + Id + "\nCarPlate: " + CarPlate + "\nServiceId: " + ServiceId + "\nStatus: servico nao finalizado\n";
+                return "Id: " + Id + "\nCarPlate: " + Car + "\nServiceId: " + Service + "\nStatus: servico nao finalizado\n";
             }
             else
             {
-                return "Id: " + Id + "\nCarPlate: " + CarPlate + "\nServiceId: " + ServiceId + "\nStatus: Finalizado\n";
+                return "Id: " + Id + "\nCarPlate: " + Car + "\nServiceId: " + Service + "\nStatus: Finalizado\n";
             }
         }
 

@@ -48,7 +48,8 @@ namespace Repositories
             using (SqlConnection conn = new SqlConnection(Conn))
             {
                 conn.Open();
-                return conn.Query<CarService>(CarService.GetAllNotDone).ToList();
+                List <CarService> lst = conn.Query<CarService>(CarService.GetAllNotDone).ToList();
+                return lst;
             }
         }
     }

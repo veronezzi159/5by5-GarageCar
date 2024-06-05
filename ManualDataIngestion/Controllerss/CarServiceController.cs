@@ -65,8 +65,8 @@ namespace Controllerss
             
             CarService cs = new CarService()
             {
-                CarPlate = car,
-                ServiceId = id
+                Car = car,
+                Service = id
             };
 
             CarService cs1 = _carServiceService.Insert(cs);
