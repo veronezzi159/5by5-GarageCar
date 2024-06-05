@@ -4,6 +4,8 @@
     {
         public static readonly string Insert = "INSERT INTO Car (Plate, Name, ModelYear, ManufactureYear, Color) VALUES (@Plate, @Name, @ModelYear, @ManufactureYear, @Color)";
         public static readonly string GetAll = "SELECT Plate, Name, ModelYear, ManufactureYear, Color FROM Car ";
+        public static readonly string QueryRed = "SELECT Plate, Name, ModelYear, ManufactureYear, Color FROM Car WHERE Color = 'Red' OR Color ='Vermelho' ";
+        public static readonly string QueryYear = "SELECT Plate, Name, ModelYear, ManufactureYear, Color FROM Car WHERE ManufactureYear = 2011 OR ManufactureYear = 2010 ";
 
        public string Plate { get; set; }
         public string Name { get; set; }
