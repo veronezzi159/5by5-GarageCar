@@ -1,5 +1,6 @@
 ﻿using Models;
 using Controllers;
+Console.WriteLine("Inicio...");
 
 string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents\\DadosGarage/\\";
 string file = "garage_data.json";

@@ -10,7 +10,8 @@ namespace Repositories
 
         public CarRepository()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["StringConnection"].ConnectionString;
+            //_connectionString = ConfigurationManager.ConnectionStrings["ConnnectionString"].ConnectionString;
+            _connectionString = "Data Source = 127.0.0.1; Initial Catalog = Garage; User Id = sa; Password = SqlServer2019!; TrustServerCertificate = true;";
         }
         public bool Insert(List <Car> cars)
         {
